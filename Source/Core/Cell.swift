@@ -98,7 +98,7 @@ open class Cell<T>: BaseCell, TypedCellType where T: Equatable {
 
     /// Returns the navigationAccessoryView if it is defined or calls super if not.
     override open var inputAccessoryView: UIView? {
-        if let v = formViewController()?.inputAccessoryView(for: row) {
+        if row != nil, let v = formViewController()?.inputAccessoryView(for: row) {
             return v
         }
         return super.inputAccessoryView
